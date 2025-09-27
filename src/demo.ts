@@ -1,4 +1,4 @@
-import { add, capitalize } from './index';
+import { add, capitalize } from './index.js';
 
 console.log('sum(any):', add(2, 3));
 
