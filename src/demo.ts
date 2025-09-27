@@ -1,5 +1,5 @@
 import { add, capitalize } from './index.js';
 
-console.log('sum(any):', add(2, 3));
+console.log('sum(typed):', add(2, 3));
 
-console.log('capitalizee(any):', capitalize('hello'));
+console.log('capitalizee(typed):', capitalize('hello'));
