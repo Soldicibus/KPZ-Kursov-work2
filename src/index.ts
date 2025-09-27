@@ -9,3 +9,14 @@ export function capitalize(str: string): string {
   const s = String(str);
   return String(s).charAt(0).toUpperCase() + String(s).slice(1);
 }
+
+export type NumberFormatOptions = {
+  precision?: number;
+  locale?: string;
+};
+
+export function formatNumber(value: number, options?: NumberFormatOptions): string {
+  const precision = options?.precision ?? Number(process.env.APP_PRECISION ?? 2);
+
+  return value.toFixed(precision);
+}
