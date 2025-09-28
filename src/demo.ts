@@ -1,8 +1,17 @@
-import { add, capitalize, formatNumber, groupBy, type User } from './index.js';
+import {
+  add,
+  capitalize,
+  formatNumber,
+  groupBy,
+  Logger,
+  type User,
+  type LogLevel,
+} from './index.js';
+import { config } from './config.js';
 
 console.log('sum(typed):', add(2, 3));
 console.log('capitalizee(typed):', capitalize('hello'));
-console.log('format(ok):', formatNumber(123.456, { precision: 2 }));
+console.log('format(ok):', formatNumber(123.456));
 
 const users: User[] = [
   { id: 1, name: 'Alice' },
@@ -10,3 +19,8 @@ const users: User[] = [
 ];
 
 console.log('group ok:', groupBy(users, 'name'));
+
+const logger = new Logger(config.LOG_LEVEL as LogLevel);
+
+logger.info('Application started');
+logger.debug('Extra debug info');
