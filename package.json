@@ -1,6 +1,6 @@
 {
   "name": "kpz-kursov-work2",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "work for duitz",
   "main": "dist/index.cjs",
   "type": "module",
