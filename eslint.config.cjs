@@ -8,12 +8,15 @@ module.exports = [
   ...tseslint.configs.recommended, // базові правила TS
   prettier, // відключення конфліктів з Prettier
   {
-    files: ['**/*.ts'],
+    files: ['**/*.ts', '**/*.js'],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
+      },
+      globals: {
+        ...require('globals').node,
       },
     },
     plugins: {
@@ -21,7 +24,7 @@ module.exports = [
     },
 
     rules: {
-      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-explicit-any': 'error',
       'no-unused-vars': 'warn',
     },
   },

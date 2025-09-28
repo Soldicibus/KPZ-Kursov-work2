@@ -2,10 +2,12 @@
   "name": "kpz-kursov-work2",
   "version": "1.5.0",
   "description": "work for duitz",
-  "main": "index.js",
+  "main": "dist/index.cjs",
   "type": "module",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup .husky/src/index.ts --format cjs,esm --dts",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write .",
@@ -44,5 +46,12 @@
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.44.1"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
   }
 }
